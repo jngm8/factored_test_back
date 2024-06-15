@@ -21,12 +21,12 @@ export class UserModule implements OnModuleInit {
 
   async onModuleInit() {
     const users = await this.userService.findAll();
-    const setOfSkills = ["Python","SQL","Java","Spark"]
+    const setOfSkills = ["Python","SQL","Java","Spark","TensorFlow"]
     if (users.length === 0) {
-      const user1 = await this.userService.create({ username: 'Jairo', password: 'factored123', name: 'Jairo Gomez', position: 'ai dev' });
-      const user2 =await this.userService.create({ username: 'Maria', password: 'factored321', name: 'Maria Becerra', position: 'web dev' });
-      const user3 =await this.userService.create({ username: 'Pedro', password: 'factored543', name: 'Pedro Capote ', position: 'mobile dev' });
-      const user4 =await this.userService.create({ username: 'Juan', password: 'factored786', name: 'Juan Lillo', position: 'data engineer' });
+      const user1 = await this.userService.create({ username: 'Jairo', password: 'factored123', name: 'Jairo Gomez', position: 'AI Developer' });
+      const user2 =await this.userService.create({ username: 'Maria', password: 'factored321', name: 'Maria Becerra', position: 'WEB Developer' });
+      const user3 =await this.userService.create({ username: 'Pedro', password: 'factored543', name: 'Pedro Capote ', position: 'Mobile Developer' });
+      const user4 =await this.userService.create({ username: 'Juan', password: 'factored786', name: 'Juan Lillo', position: 'Data Engineer' });
 
       for (let i = 0; i < setOfSkills.length; i++){
         this.skillService.addSkill({

@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { User } from './user';
 import { UserService } from './user.service';
 
@@ -10,7 +10,7 @@ export class UserController {
     ){}
 
     @Post()
-    login(user: User) {
-        this.userService.login(user);
+    login(@Body() user: User) {
+        return this.userService.login(user);
     }
 }
