@@ -1,73 +1,57 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Instructions to run NestJS app
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+1. Download source code from factored_test_back
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## In the command line run the following commands
 
-## Description
+2. docker-compose up --build (It takes some time)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Until this point you can run the app without any problem. The following instructions are to see the database tables and how the app's database is constructed in pgadmin
+   
+## In a separate command line run the following command
+3. docker container ls
+   
+4. Copy and paste the container id from the postgres container (An example of the id is like the one in the image c7c3d9b122b6)
+![image](https://github.com/jngm8/factored_test_back/assets/68575075/c8d79df7-9ee3-4654-99b3-91e344ff9b2e)
 
-## Installation
+## Run the following command
+5. docker inspect "id you just copied, in this case c7c3d9b122b6". The whole command will be docker inspect c7c3d9b122b6
+   
+6. copy and paste the IP address
+   
+   ![image](https://github.com/jngm8/factored_test_back/assets/68575075/e7bef311-98ae-4064-80d1-084c52b11ecf)
 
-```bash
-$ npm install
-```
+7. Go to docker desktop and enter to the pgadmin image
+   
+![image](https://github.com/jngm8/factored_test_back/assets/68575075/aafb0699-d650-4cb5-8364-3a13f99c440e)
 
-## Running the app
+8. In the login page, enter as username: admin@admin.com. As password: admin
 
-```bash
-# development
-$ npm run start
+9. Add a new server
 
-# watch mode
-$ npm run start:dev
+![image](https://github.com/jngm8/factored_test_back/assets/68575075/7d5365df-5de5-41bd-ac7c-924f14c82c1a)
 
-# production mode
-$ npm run start:prod
-```
+11. Enter the database name as postgres_db
 
-## Test
+![image](https://github.com/jngm8/factored_test_back/assets/68575075/58748cfa-5afc-4abd-b3af-050827d8ccc5)
 
-```bash
-# unit tests
-$ npm run test
+12. Enter the IP address you got from the step 7
 
-# e2e tests
-$ npm run test:e2e
+    ![image](https://github.com/jngm8/factored_test_back/assets/68575075/c17066e8-7199-4a4f-b241-1a44ae748ed5)
 
-# test coverage
-$ npm run test:cov
-```
+13. Enter the username: postgres and password: postgres and the click save
 
-## Support
+    ![image](https://github.com/jngm8/factored_test_back/assets/68575075/73f4164c-646f-4c13-bdf6-b4f8cd1638b6)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+14. Click on servers, then postgres, databases, factored, schemas and finally table
 
-## Stay in touch
+    ![image](https://github.com/jngm8/factored_test_back/assets/68575075/c43582bc-1c0c-455a-a7fc-ab6b7fc8a2d4)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+16. In tables click on user and in the upper part of the screen click on the table icon. Youll see the users table and test with any user you want
 
-## License
+  ![image](https://github.com/jngm8/factored_test_back/assets/68575075/c33a18f5-985a-473c-af76-dd1513089bf3)
 
-Nest is [MIT licensed](LICENSE).
+17. Repeat with skills to see the information
+
+
+
